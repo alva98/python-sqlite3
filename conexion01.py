@@ -9,14 +9,17 @@ def Crea_DB():
         print("Error en sqlite3: ", error)
 
 def Crea_Tabla():
-    Cursor.execute("CREATE TABLE IF NOT EXISTS usuarios(usuarios archar(50), contraseña varchar(50))")
-    cnne.commit()
-    print("Tabla creada con exito.")
+    try:
+       Cursor.execute("CREATE TABLE IF NOT EXISTS usuarios(usuarios archar(50), contraseña varchar(50))")
+       cnne.commit()
+       print("Tabla creada con exito.")
+    except sqlite3.error as error:
+       print("Error sqlite3 de tabla: ", error)
 
 mi_db = "mi_empresa"
 conn =sql3.connect("database/"+ mi_db + "sqlite")
 Cursor = conn.cursor()
-
+Crea_Tabla()
 
 Cursor.close()
 conn.close ()
