@@ -1,7 +1,7 @@
 import tkinter as tk
 
 # initiallize app
-root  = ttk.tk()
+root  = tk.tk()
 root.title("Manejo de ventanas tkinter")
 
 #run app
